@@ -11,6 +11,7 @@ import {
   EuiBasicTable,
   EuiSearchBar,
 } from '@elastic/eui';
+// import { buildEsQuery } from 'kbn-es-query';
 var lucene_parser = require('lucene-query-parser');
 
 const initialQuery = EuiSearchBar.Query.MATCH_ALL;
@@ -43,6 +44,22 @@ export const SearchBar = () => {
   let esQuerySimple;
   let luceneQueryDsl;
   let currentBehavior;
+  // let kbnQuery;
+  // try {
+  //   const indexPattern = undefined; // Use this if you don't have a specific index pattern
+  //   const queries = [
+  //     {
+  //       query: 'field:value', // Your query string
+  //       language: 'kuery',   // Specify 'kuery' or 'lucene'
+  //     },
+  //   ];
+  //   const filters = []; // Add filters if required
+  //   kbnQuery = buildEsQuery(indexPattern, queries, filters);
+  // } catch (e) {
+  //   kbnQuery = e.toString();
+  //   console.log(e);
+  // }
+
   try {
      currentBehavior = {
         bool: {
